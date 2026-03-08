@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>석우 C&M</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+
+/* 상단 */
+
+.intro{
+background:#ffffff;
+padding:20px 40px;
+}
+
+.intro-container{
+display:flex;
+align-items:center;
+gap:40px;
+}
+
+.logo img{
+height:170px;
+object-fit:contain;
+}
+
+.intro-text{
+display:flex;
+flex-direction:column;
+justify-content:center;
+}
+
+.intro-text p{
+color:#2c4f86;
+font-size:23px;
+margin:4px 0;
+white-space:nowrap;
+}
+
+
+/* 슬라이드 */
+
+.slider-section{
+padding:20px;
+overflow:hidden;
+}
+
+.slider-track{
+display:flex;
+gap:20px;
+overflow-x:auto;
+scroll-behavior:smooth;
+}
+
+.slider-track::-webkit-scrollbar{
+display:none;
+}
+
+.slider-track img{
+width:350px;
+height:260px;
+object-fit:cover;
+cursor:pointer;
+border-radius:6px;
+flex-shrink:0;
+}
+
+
+/* 주요서비스 */
+
+.service{
+background:#d9d9d9;
+padding:30px;
+}
+
+.service h2{
+color:#2c4f86;
+font-size:42px;
+}
+
+.service p{
+color:#2c4f86;
+font-size:27px;
+line-height:1.8;
+}
+
+
+/* 정보 */
+
+.info{
+background:#d9d9d9;
+padding:40px;
+}
+
+.info-container{
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:40px;
+}
+
+.info-row{
+display:flex;
+gap:60px;
+}
+
+.info-box h3{
+color:red;
+font-size:35px;
+}
+
+.info-box p{
+font-size:29px;
+font-weight:600;
+}
+
+.phone{
+color:#1a3dc1;
+font-size:33px;
+}
+
+.email{
+color:#1a3dc1;
+font-size:33px;
+}
+
+.info-right img{
+width:400px;
+border-radius:8px;
+}
+
+
+/* 지도 */
+
+.map{
+width:100%;
+}
+
+
+/* 이미지 팝업 */
+
+.modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+align-items:center;
+justify-content:center;
+}
+
+.modal img{
+max-width:90%;
+max-height:90%;
+}
+
+
+
+/* 모바일 */
+
+@media(max-width:768px){
+
+.intro-container{
+flex-direction:column;
+text-align:center;
+}
+
+.logo img{
+width:70%;
+height:auto;
+}
+
+.intro-text p{
+font-size:17px;
+white-space:normal;
+margin:2px 0;
+}
+
+
+/* 슬라이드 */
+
+.slider-track img{
+width:240px;
+height:180px;
+}
+
+
+/* 주요서비스 공백 축소 */
+
+.service{
+padding:15px 20px 5px 20px;
+}
+
+.service h2{
+margin:5px 0;
+}
+
+.service p{
+font-size:20px;
+margin:5px 0;
+line-height:1.5;
+}
+
+
+/* 오시는길 공백 축소 */
+
+.info{
+padding:5px 20px;
+}
+
+.info-container{
+flex-direction:column;
+align-items:flex-start;
+gap:3px;
+}
+
+.info-row{
+flex-direction:column;
+gap:3px;
+}
+
+.info-box{
+margin:2px 0;
+}
+
+.info-box h3{
+margin:2px 0;
+}
+
+.info-box p{
+font-size:25px;
+margin:2px 0;
+}
+
+
+/* 전화 */
+
+.phone{
+font-size:31px;
+margin:2px 0;
+}
+
+
+/* 이메일 */
+
+.email{
+font-size:31px;
+margin:2px 0;
+}
+
+.info-right img{
+width:100%;
+margin-top:6px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- 상단 -->
+
+<section class="intro">
+
+<div class="intro-container">
+
+<div class="logo">
+<img src="images/logo.jpg">
+</div>
+
+<div class="intro-text">
+
+<p>석우 C&M은 35년 이상의 인쇄 경험을 바탕으로 정확하고 깔끔한 작업을 제공합니다.</p>
+
+<p>단순 출력부터 각종 문서 제본까지 다양한 작업을 진행하며 오랜 시간 쌓아온 노하우로 안정적인 품질을 유지하고 있습니다.</p>
+
+<p>앞으로도 꾸준한 노력으로 믿고 맡길 수 있는 파트너가 되겠습니다. 부담가지지 마시고 언제든 편하게 문의해 주십시오.</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- 슬라이드 -->
+
+<section class="slider-section">
+
+<div class="slider-track" id="slider">
+
+<img src="images/slide1.jpg" onclick="openModal(this.src)">
+<img src="images/slide2.jpg" onclick="openModal(this.src)">
+<img src="images/slide3.jpg" onclick="openModal(this.src)">
+<img src="images/slide4.jpg" onclick="openModal(this.src)">
+<img src="images/slide5.jpg" onclick="openModal(this.src)">
+<img src="images/slide6.jpg" onclick="openModal(this.src)">
+<img src="images/slide7.jpg" onclick="openModal(this.src)">
+<img src="images/slide8.jpg" onclick="openModal(this.src)">
+<img src="images/slide9.jpg" onclick="openModal(this.src)">
+
+</div>
+
+</section>
+
+
+
+<!-- 주요서비스 -->
+
+<section class="service">
+
+<h2>주요서비스 (Services)</h2>
+
+<p>
+학회발표 포스터, 팜플렛(중철), 건축설계설명서, 제안서, 준공도서(반접),
+판넬 보드, 포트폴리오, 명함, 메뉴판, 개별연구논문, 석·박사학위논문,
+CAD 출력, 판넬 보드, 코팅, 무선제본, 떡 제본, 스트립제본, 스프링제본,
+엽서, FAX(국내), 스캔(대형,소형), 배너, 현수막, 배우프로필출력
+</p>
+
+</section>
+
+
+
+<!-- 정보 -->
+
+<section class="info">
+
+<div class="info-container">
+
+<div class="info-row">
+
+<div class="info-box">
+<h3>오시는길</h3>
+<p>서울시 마포구 와우산로 108 1층</p>
+</div>
+
+<div class="info-box">
+<h3>연락처</h3>
+<p class="phone">
+02-335-0599<br>
+010-6710-0599
+</p>
+</div>
+
+<div class="info-box">
+<h3>이메일</h3>
+<p class="email">hisukwoo@naver.com</p>
+</div>
+
+</div>
+
+<div class="info-right">
+<img src="images/photo.jpg">
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- 지도 -->
+
+<section class="map">
+
+<iframe
+width="100%"
+height="400"
+style="border:0"
+loading="lazy"
+allowfullscreen
+src="https://www.google.com/maps?q=대한민국 서울시 마포구 와우산로 108&output=embed">
+</iframe>
+
+</section>
+
+
+
+<!-- 이미지 확대 -->
+
+<div id="modal" class="modal" onclick="closeModal()">
+<img id="modal-img">
+</div>
+
+
+
+<script>
+
+function openModal(src){
+document.getElementById("modal").style.display="flex";
+document.getElementById("modal-img").src=src;
+}
+
+function closeModal(){
+document.getElementById("modal").style.display="none";
+}
+
+const slider = document.getElementById("slider");
+
+let scrollAmount = 0;
+
+setInterval(()=>{
+
+const imgWidth = slider.querySelector("img").clientWidth + 20;
+
+scrollAmount += imgWidth;
+
+if(scrollAmount >= slider.scrollWidth - slider.clientWidth){
+scrollAmount = 0;
+}
+
+slider.scrollTo({
+left:scrollAmount,
+behavior:"smooth"
+});
+
+},3000);
+
+</script>
+
+</body>
+</html>

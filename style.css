@@ -1,0 +1,230 @@
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+
+/* 상단 */
+
+.intro{
+background:#f2f2f2;
+padding:40px;
+}
+
+.intro-container{
+display:flex;
+align-items:center;
+gap:40px;
+}
+
+.logo h1{
+font-size:90px;
+color:#2c4f86;
+margin:0;
+}
+
+.logo h2{
+font-size:70px;
+margin:0;
+color:#2c4f86;
+}
+
+.logo span{
+color:red;
+}
+
+
+/* 회사소개 */
+
+.intro-text p{
+color:#2c4f86;
+font-size:23px;
+line-height:1.7;
+margin:10px 0;
+}
+
+
+
+/* 슬라이드 */
+
+.slider-section{
+padding:20px;
+overflow:hidden;
+}
+
+.slider-track{
+display:flex;
+gap:20px;
+overflow-x:hidden;
+}
+
+.slider-track img{
+width:350px;
+height:260px;
+object-fit:cover;
+cursor:pointer;
+border-radius:6px;
+flex-shrink:0;
+}
+
+
+
+/* 서비스 */
+
+.service{
+background:#d9d9d9;
+padding:30px;
+}
+
+.service h2{
+color:#2c4f86;
+font-size:40px;
+}
+
+.service p{
+color:#2c4f86;
+font-size:24px;
+line-height:1.8;
+}
+
+
+
+/* 정보 */
+
+.info{
+background:#d9d9d9;
+padding:40px;
+}
+
+.info-container{
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:40px;
+}
+
+.info-row{
+display:flex;
+gap:60px;
+}
+
+.info-box h3{
+color:red;
+font-size:31px;
+}
+
+.info-box p{
+font-size:25px;
+}
+
+.phone{
+color:#1a3dc1;
+}
+
+.email{
+color:#1a3dc1;
+}
+
+
+/* 사진 */
+
+.info-right img{
+width:400px;
+border-radius:8px;
+}
+
+
+
+/* 지도 */
+
+.map{
+width:100%;
+}
+
+
+
+/* 팝업 */
+
+.modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+align-items:center;
+justify-content:center;
+}
+
+.modal img{
+max-width:90%;
+max-height:90%;
+}
+
+
+
+/* 모바일 */
+
+@media(max-width:768px){
+
+.intro-container{
+flex-direction:column;
+align-items:center;
+text-align:center;
+}
+
+.logo{
+text-align:center;
+width:100%;
+}
+
+.logo h1{
+font-size:63px;
+}
+
+.logo h2{
+font-size:53px;
+}
+
+.intro-text p{
+font-size:21px;
+}
+
+.slider-track img{
+width:240px;
+height:180px;
+}
+
+.service{
+padding:20px;
+}
+
+.service p{
+font-size:20px;
+}
+
+.info{
+padding:20px;
+}
+
+.info-container{
+flex-direction:column;
+align-items:flex-start;
+gap:15px;
+}
+
+.info-row{
+flex-direction:column;
+gap:10px;
+}
+
+.info-right img{
+width:100%;
+}
+
+.phone{
+font-size:24px;
+}
+
+}
